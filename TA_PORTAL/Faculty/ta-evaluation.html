@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TA Evaluation - TA Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Faculty" data-page="faculty-ta-evaluation">
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="applicants.html">Applicants</a>
+        <a class="nav-link active" href="ta-evaluation.html">TA Evaluation</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container">
+    <section class="custom-card page-banner accent-purple">
+        <div>
+            <h2>TA Evaluation &amp; Certificate Center</h2>
+            <p>Semester/performance evaluation after a student becomes a TA · Fall 2026</p>
+        </div>
+        <span class="term-badge">Faculty Hub</span>
+    </section>
+    <div class="static-page-grid">
+        <section class="custom-card accent-blue">
+            <h3 class="section-title">Semester Performance Evaluation</h3>
+            <p class="small-text">Keep this separate from Interview Evaluation; this is for a student already serving as a TA.</p>
+            <form id="taEvaluationForm">
+                <div class="form-group">
+                    <label class="form-label" for="taEvaluationSelect">Select Active TA</label>
+                    <select id="taEvaluationSelect" class="form-select" required></select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="taRating">Rating</label>
+                    <select id="taRating" name="rating" class="form-select" required>
+                        <option>5 - Outstanding</option>
+                        <option>4 - Exceeds Expectations</option>
+                        <option>3 - Satisfactory</option>
+                        <option>2 - Not Satisfactory</option>
+                        <option>1 - Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="taFeedback">Feedback</label>
+                    <textarea id="taFeedback" name="feedback" rows="5" placeholder="Provide performance comments..." required></textarea>
+                </div>
+                <button class="btn-primary" type="submit">Submit Evaluation</button>
+            </form>
+        </section>
+        <section>
+            <div class="custom-card accent-green">
+                <div class="section-heading-row">
+                    <div>
+                        <h3 class="section-title">Generate TA Certificate</h3>
+                        <p class="small-text">Create a printable certificate for an active or completed TA assignment.</p>
+                    </div>
+                    <i class="bi bi-award-fill icon-large icon-green"></i>
+                </div>
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label class="form-label" for="certificateTaSelect">TA</label>
+                        <select id="certificateTaSelect" class="form-select"></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="certificateDate">Certificate Date</label>
+                        <input id="certificateDate" type="date" class="form-control" value="2026-09-25">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="certificateRecognition">Additional Recognition</label>
+                    <input id="certificateRecognition" class="form-control" placeholder="e.g. Successfully completed assigned TA responsibilities">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-success" id="generateCertificate"><i class="bi bi-magic"></i> Generate Certificate</button>
+                    <button type="button" class="btn-light" id="clearCertificate">Clear</button>
+                </div>
+            </div>
+            <div id="certificatePreview" class="certificate-preview-wrap" hidden>
+                <div class="certificate-preview-header">
+                    <div>
+                        <strong>Certificate Preview</strong>
+                        <div class="small-text">Print or send the certificate details.</div>
+                    </div>
+                    <div class="inline-actions">
+                        <button class="btn-outline-primary" type="button" id="printCertificate"><i class="bi bi-printer"></i> Print</button>
+                        <button class="btn-primary" type="button" id="sendCertificate"><i class="bi bi-send"></i> Send</button>
+                    </div>
+                </div>
+                <div id="certificateDocument" class="certificate-document"></div>
+            </div>
+            <div class="custom-card accent-red">
+                <h3 class="section-title">TA Issue Report</h3>
+                <form id="taIssueForm">
+                    <div class="form-group">
+                        <label class="form-label" for="taIssueSelect">Select TA</label>
+                        <select id="taIssueSelect" class="form-select" required></select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="taIssueDescription">Issue</label>
+                        <textarea id="taIssueDescription" rows="4" required placeholder="Describe the issue..."></textarea>
+                    </div>
+                    <button class="btn-outline-danger" type="submit">Submit Incident Report</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/faculty.js"></script>
+</body>
+</html>

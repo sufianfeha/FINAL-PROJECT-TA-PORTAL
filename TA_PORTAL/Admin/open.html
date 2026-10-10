@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Open TA Position - TA Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="app-shell" data-role="Admin" data-page="admin-open">
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+        <div class="navbar-nav">
+            <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span>
+            </div>
+            <a class="nav-link" href="index.html">Dashboard</a>
+            <a class="nav-link active" href="Ta_position.html">TA Positions</a>
+            <a class="nav-link" href="Applications.html">Applications</a>
+            <a class="nav-link" href="Reports.html">Reports</a>
+            <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+        </div>
+    </nav>
+    <main>
+        <div class="page-container narrow">
+            <section class="custom-card page-banner">
+                <div>
+                    <h2>Open TA Position</h2>
+                    <p>Create one TA position for a specific course section.</p>
+                </div>
+                <span class="term-badge">Fall 2026</span>
+            </section>
+            <section class="form-box">
+                <form id="openPositionForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label" for="positionDepartment">Department</label>
+                            <select id="positionDepartment" class="form-select" required>
+                                <option value="">Select Department</option>
+                                <option>BBA</option>
+                                <option>CSE</option>
+                                <option>EEE</option>
+                                <option>Civil</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="positionCourseCode">Course Code</label>
+                            <select id="positionCourseCode" class="form-select" required></select>
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label" for="positionCourseTitle">Course Title</label>
+                            <input id="positionCourseTitle" class="form-control readonly-field" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="positionSection">Section</label>
+                            <input id="positionSection" class="form-control" placeholder="eg.. A" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="positionFaculty">Faculty</label>
+                            
+                            <select id="positionFaculty" class="form-select" required>
+                                <option value="">Select Faculty...</option>
+                            </select>
+                        </div>
+
+                        <!-- Split into Two Portions: Days and Time -->
+                        <div class="form-group">
+                            <label class="form-label" for="positionDays">Days of the Week</label>
+                            <input id="positionDays" class="form-control" placeholder="Mon / Wed" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="positionTime">Class Time</label>
+                            <input id="positionTime" class="form-control" placeholder="9:00 AM - 10:30 AM" required>
+                        </div>
+                        <!-- End Split -->
+                        <div class="form-group">
+                            <label class="form-label" for="positionRoom">Room</label>
+                            <input id="positionRoom" class="form-control" placeholder="Lab 2" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="positionHours">TA Weekly Hours</label>
+                            <input id="positionHours" class="form-control" type="number" min="1" value="3" required>
+                        </div>
+                    </div>
+                    <div class="form-note">Course prerequisites are configured centrally in
+                        Eligibility Rules.</div>
+                    <div class="form-actions">
+                        <a class="btn-secondary" href="Ta_position.html">Cancel</a>
+                        <button class="btn-primary" type="submit">Open TA Position</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.
+        </div>
+    </footer>
+    <script type="module" src="../assets/js/admin.js"></script>
+</body>
+
+</html>

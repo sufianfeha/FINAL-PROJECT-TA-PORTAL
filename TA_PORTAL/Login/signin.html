@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In - TA Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="login-page">
+    
+    
+    <main class="auth-box narrow">
+        <div class="brand-wrapper">
+            <a class="brand-link" href="landing.html">TA Recruitment &amp; Management Portal</a>
+        </div>
+        
+        <h1>Sign In</h1>
+        <p class="auth-subtitle">Select the demo role below. Backend authentication determines the final portal role.</p>
+        
+        <div class="tabs">
+            <button type="button" class="active" data-login-role="Student">Student</button>
+            <button type="button" data-login-role="Faculty">Faculty</button>
+            <button type="button" data-login-role="Admin">Admin</button>
+        </div>
+        
+        <form id="loginForm">
+            <label class="form-label" for="loginEmail">Institutional Email</label>
+            <input id="loginEmail" type="email" placeholder="name@university.edu" required>
+            
+            <label class="form-label" for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="••••••••" required>
+            
+            <button class="btn-primary auth-submit" type="submit" id="loginSubmit">Log in as Student</button>
+            
+            <div class="text-center" style="margin-top:14px">
+                <a class="text-primary small-text" href="reset_pass.html">Forgot Password?</a>
+            </div>
+        </form>
+    </main>
+    
+    
+    <script type="module" src="../assets/js/auth.js"></script>
+</body>
+</html>

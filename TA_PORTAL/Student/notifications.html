@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notifications - TA Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Student" data-page="student-notifications">
+<nav class="navbar">
+    <a class="navbar-brand" href="s_dashboard.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="notification-wrap">
+            <button type="button" class="notification-button" id="notificationButton" aria-label="Notifications">
+                <i class="bi bi-bell"></i><span class="notification-count" id="notificationCount" hidden></span>
+            </button>
+            <div class="notification-panel" id="notificationPanel">
+                <div class="notification-panel-header">
+                    <div><strong>Notifications</strong><div class="small-text">Recent student updates</div></div>
+                    <a href="notifications.html" class="notification-view-all">View all</a>
+                </div>
+                <div id="notificationList"></div>
+            </div>
+        </div>
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link" href="s_dashboard.html">Dashboard</a>
+        <a class="nav-link" href="s_available.html">Available Sections</a>
+        <a class="nav-link" href="s_application.html">Apply for TA</a>
+        <a class="nav-link active" href="notifications.html">Notifications</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container">
+    <section class="custom-card page-banner notification-banner">
+        <div>
+            <span class="page-eyebrow"><i class="bi bi-bell-fill"></i> Student Notifications</span>
+            <h2>Notifications</h2>
+            <p>Recent updates about your TA applications, interviews, and assignments.</p>
+        </div>
+        <div class="notification-summary">
+            <div class="notification-summary-icon"><i class="bi bi-bell-fill"></i></div>
+            <div><strong id="pageUnreadCount">0</strong><span>Unread</span></div>
+        </div>
+    </section>
+    <section class="notification-actions">
+        <button type="button" class="btn-outline-primary" id="markAllNotifications"><i class="bi bi-check2-all"></i> Mark all as read</button>
+        <span class="small-text">Read notifications remain available in notification history.</span>
+    </section>
+    <section class="custom-card notification-list-card">
+        <div class="notification-list-heading">
+            <div>
+                <h3 class="section-title">Recent Notifications</h3>
+                <p class="small-text">Latest updates from the TA Recruitment &amp; Management Portal.</p>
+            </div>
+            <span class="term-badge">Fall 2026</span>
+        </div>
+        <div class="student-notification-list" id="studentNotificationList"></div>
+    </section>
+    <section class="custom-card notification-info-card">
+        <div class="notification-info-icon"><i class="bi bi-info-circle-fill"></i></div>
+        <div>
+            <h3>About notifications</h3>
+            <p>Notifications keep you updated about application shortlisting, interview schedules, application results, and TA assignments.</p>
+        </div>
+    </section>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/student.js"></script>
+</body>
+</html>

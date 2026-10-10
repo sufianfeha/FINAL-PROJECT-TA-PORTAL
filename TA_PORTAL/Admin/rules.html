@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eligibility Rules - TA Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Admin" data-page="admin-rules">
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link active" href="index.html">Dashboard</a>
+        <a class="nav-link" href="Ta_position.html">TA Positions</a>
+        <a class="nav-link" href="Applications.html">Applications</a>
+        <a class="nav-link" href="Reports.html">Reports</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container">
+    <section class="custom-card page-banner">
+        <div>
+            <h2>Eligibility Rules</h2>
+            <p>Rules apply to Fall 2026 recruitment.</p>
+        </div>
+        <div class="text-right"><span class="small-text">Last updated by Admin: 23 Sep 2026</span></div>
+    </section>
+    <form id="rulesForm" class="form-box">
+        <div class="form-grid">
+            <div class="form-group">
+                <label class="form-label" for="minCgpa">Minimum Overall CGPA</label>
+                <input name="minCgpa" id="minCgpa" type="number" step="0.01" min="0" max="4" value="3.50">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="minCredits">Minimum Completed Credits</label>
+                <input name="minCredits" id="minCredits" type="number" min="0" value="60">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="prereqRequired">Prerequisite Completion Required</label>
+                <div class="check-row">
+                    <input name="prereqRequired" id="prereqRequired" type="checkbox" checked>
+                    <span>Students must complete required prerequisites.</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="maxAssignments">Maximum TA Assignments per Student</label>
+                <input name="maxAssignments" id="maxAssignments" type="number" min="2" value="2">
+            </div>
+            <div class="form-group full">
+                <label class="form-label">Maximum Application Choices</label>
+                <input class="form-control readonly-field" value="3 choices" readonly>
+                <div class="small-text">Application-choice limit is separate from Maximum TA Assignments per Student.</div>
+            </div>
+            <div class="form-group full">
+                <label class="form-label" for="deadline">Global Application Deadline</label>
+                <input name="deadline" id="deadline" type="date" value="2026-09-30">
+                <div class="small-text">One global deadline for the recruitment cycle.</div>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="btn-primary" type="submit">Save Recruitment Rules</button>
+        </div>
+    </form>
+    <section class="custom-card">
+        <div class="section-heading-row">
+            <div>
+                <h3 class="section-title">Course-Specific Criteria</h3>
+                <p class="small-text">Edit the Preferred Grade and single prerequisite directly in the table. Preferred Grade is a selection criterion, not a hard blocker.</p>
+            </div>
+            <span class="term-badge">Fall 2026</span>
+        </div>
+        <div class="table-responsive">
+            <table class="criteria-table">
+                <thead>
+                    <tr>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Preferred Grade</th>
+                        <th>Prerequisite Course</th>
+                    </tr>
+                </thead>
+                <tbody id="subjectCriteriaRows"></tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

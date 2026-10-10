@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apply for TA - TA Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Student" data-page="student-application">
+<nav class="navbar">
+    <a class="navbar-brand" href="s_dashboard.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="notification-wrap">
+            <button type="button" class="notification-button" id="notificationButton" aria-label="Notifications">
+                <i class="bi bi-bell"></i><span class="notification-count" id="notificationCount" hidden></span>
+            </button>
+            <div class="notification-panel" id="notificationPanel">
+                <div class="notification-panel-header">
+                    <div><strong>Notifications</strong><div class="small-text">Recent student updates</div></div>
+                    <a href="notifications.html" class="notification-view-all">View all</a>
+                </div>
+                <div id="notificationList"></div>
+            </div>
+        </div>
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link" href="s_dashboard.html">Dashboard</a>
+        <a class="nav-link" href="s_available.html">Available Sections</a>
+        <a class="nav-link active" href="s_application.html">Apply for TA</a>
+        <a class="nav-link" href="notifications.html">Notifications</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container">
+    <section class="custom-card page-banner">
+        <div>
+            <h2>Teaching Assistant Application</h2>
+            <p>Submit ranked positions and supporting materials for Fall 2026 recruitment.</p>
+        </div>
+        <span class="term-badge">Fall 2026</span>
+    </section>
+    <section class="custom-card">
+        <div class="section-heading-row">
+            <div>
+                <h3 class="section-heading">Selected Positions &amp; Preference Ranking</h3>
+                <p class="small-text">You may select up to 3 application choices. This is separate from the Maximum TA Assignments per Student rule.</p>
+            </div>
+            <a class="btn-outline-primary" href="s_available.html">Add Another Position</a>
+        </div>
+        <div id="selectedPositionsList"></div>
+        <div class="notice notice-info">Applications close on 30 September 2026.</div>
+    </section>
+    <section class="custom-card">
+        <h3 class="section-heading">Selected Position Details</h3>
+        <div class="grid-2">
+            <div>
+                <label class="form-label" for="selectedCourse">Course</label>
+                <input id="selectedCourse" class="form-control readonly-field" readonly>
+            </div>
+            <div>
+                <label class="form-label" for="selectedSectionFaculty">Section / Faculty</label>
+                <input id="selectedSectionFaculty" class="form-control readonly-field" readonly>
+            </div>
+        </div>
+        <div id="preferredGradeWarnings"></div>
+    </section>
+    <section class="custom-card">
+        <h3 class="section-heading">Supporting Documents &amp; Repository Links</h3>
+        <div class="grid-2">
+            <div>
+                <label class="form-label" for="applicationCv">Resume / CV File (.pdf, .docx)</label>
+                <input id="applicationCv" type="file" accept=".pdf,.doc,.docx" required>
+                <div class="small-text">Max file size: 5MB.</div>
+            </div>
+            <div>
+                <label class="form-label" for="applicationPortfolio">GitHub Repository / Portfolio Link</label>
+                <input id="applicationPortfolio" type="url" placeholder="https://github.com/yourusername">
+            </div>
+            <div>
+                <label class="form-label" for="applicationTranscript">Unofficial Transcript (.pdf)</label>
+                <input id="applicationTranscript" type="file" accept=".pdf">
+            </div>
+        </div>
+    </section>
+    <section class="custom-card">
+        <div class="section-heading-row">
+            <div>
+                <h3 class="section-heading">Statement of Interest</h3>
+                <p class="small-text">Maximum 300 words.</p>
+            </div>
+            <span id="statementCounter" class="status-badge status-info">0 / 300 words</span>
+        </div>
+        <textarea id="statement" rows="7" placeholder="Explain why you are interested in the selected course(s) and why you are prepared to serve as a TA."></textarea>
+        <div class="form-actions">
+            <button class="btn-primary" type="button" id="submitApplication">Submit Application</button>
+        </div>
+    </section>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/student.js"></script>
+</body>
+</html>

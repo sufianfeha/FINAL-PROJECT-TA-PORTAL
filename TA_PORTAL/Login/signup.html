@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create Student Account - TA Portal</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="login-page">
+   
+    <main class="auth-box">
+        <div class="brand-wrapper">
+            <a class="brand-link" href="landing.html">TA Recruitment &amp; Management Portal</a>
+        </div>
+        <h1>Create Student Account</h1>
+        <p class="description">Academic information will be verified before eligibility is determined for Fall 2026 recruitment.</p>
+        
+        <form id="signupForm">
+            <label class="form-label" for="signupName">Full Name</label>
+            <input id="signupName" type="text" placeholder="eg...Siam Ahmed" required>
+            
+            <div class="grid-2">
+                <div>
+                    <label class="form-label" for="signupStudentId">Student ID</label>
+                    <input id="signupStudentId" type="text" placeholder="2026-00108" required>
+                </div>
+                <div>
+                    <label class="form-label" for="signupDepartment">Department</label>
+                    <select id="signupDepartment" class="form-select" required>
+                        <option value="">Select Department</option>
+                        <option>BBA</option>
+                        <option>CSE</option>
+                        <option>EEE</option>
+                        <option>Civil</option>
+                    </select>
+                </div>
+            </div>
+            
+            <label class="form-label" for="signupEmail">University Email</label>
+            <input id="signupEmail" type="email" placeholder="student@university.edu" required>
+            
+            <div class="grid-2">
+                <div>
+                    <label class="form-label" for="signupCgpa">Current CGPA</label>
+                    <input id="signupCgpa" type="number" step="0.01" min="0" max="4" placeholder="eg...3.95" required>
+                </div>
+                <div>
+                    <label class="form-label" for="signupCredits">Completed Credits</label>
+                    <input id="signupCredits" type="number" min="0" placeholder="eg...82" required>
+                </div>
+            </div>
+            
+            <label class="form-label" for="signupPassword">Password</label>
+            <input id="signupPassword" type="password" placeholder="••••••••" required>
+            
+            <button class="btn-primary auth-submit" type="submit">Register Account</button>
+        </form>
+        
+        <hr style="border:0;border-top:1px solid var(--border);margin:24px 0">
+        <p class="description">Already have an account? <a class="text-primary" href="signin.html">Sign In</a></p>
+        <p class="description">If you are a faculty or admin please contact your department</p>
+    </main>
+   
+    <script type="module" src="../assets/js/auth.js"></script>
+</body>
+</html>

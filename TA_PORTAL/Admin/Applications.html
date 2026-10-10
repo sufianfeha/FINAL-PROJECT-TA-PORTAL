@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Applications - TA Portal Admin</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Admin" data-page="admin-applications">
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link" href="Ta_position.html">TA Positions</a>
+        <a class="nav-link active" href="Applications.html">Applications</a>
+        <a class="nav-link" href="Reports.html">Reports</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container">
+    <section class="custom-card page-banner">
+        <div>
+            <h2>Student Application Registry</h2>
+            <p>Admin-only initial review and shortlisting · Fall 2026</p>
+        </div>
+        <span class="term-badge">Fall 2026</span>
+    </section>
+    <section class="custom-card">
+        <div class="filter-bar">
+            <div>
+                <label class="form-label" for="adminStudentSearch">Search Student</label>
+                <input id="adminStudentSearch" class="form-control" placeholder="Student name">
+            </div>
+            <div>
+                <label class="form-label" for="adminCourseSearch">Search Course</label>
+                <input id="adminCourseSearch" class="form-control" placeholder="Course ID or name">
+            </div>
+            <div>
+                <label class="form-label" for="adminStatusFilter">Application Status</label>
+                <select id="adminStatusFilter" class="form-select">
+                    <option value="all">All Statuses</option>
+                    <option>Under Review</option>
+                    <option>Shortlisted</option>
+                    <option>Rejected</option>
+                    <option>Assigned</option>
+                </select>
+            </div>
+            <div></div>
+        </div>
+    </section>
+    <section class="table-box">
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Applicant</th>
+                        <th>Course / Section</th>
+                        <th>Applied On</th>
+                        <th>CGPA</th>
+                        <th>Credits</th>
+                        <th>Preferred Grade Status</th>
+                        <th>Status</th>
+                        <th class="action-cell">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="adminApplicationRows"></tbody>
+            </table>
+        </div>
+    </section>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/admin.js"></script>
+</body>
+</html>

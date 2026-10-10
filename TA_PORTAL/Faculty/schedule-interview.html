@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule Interview - TA Portal</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="app-shell" data-role="Faculty" data-page="faculty-schedule">
+<nav class="navbar">
+    <a class="navbar-brand" href="index.html"><i class="bi bi-mortarboard-fill"></i>TA Portal</a>
+    <div class="navbar-nav">
+        <div class="nav-profile"><i class="bi bi-person-circle"></i><span id="navProfileName">Loading...</span></div>
+        <a class="nav-link" href="index.html">Dashboard</a>
+        <a class="nav-link active" href="applicants.html">Applicants</a>
+        <a class="nav-link" href="ta-evaluation.html">TA Evaluation</a>
+        <a class="btn-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right"></i> Logout</a>
+    </div>
+</nav>
+<main>
+<div class="page-container narrow">
+    <section class="custom-card page-banner">
+        <div>
+            <h2>Schedule Interview</h2>
+            <p>Only Admin-shortlisted candidates who have not been interviewed can be scheduled.</p>
+        </div>
+        <span class="term-badge">Fall 2026</span>
+    </section>
+    <section class="custom-card">
+        <form id="scheduleInterviewForm">
+            <div class="form-group">
+                <label class="form-label" for="scheduleCandidate">Shortlisted Candidate</label>
+                <select id="scheduleCandidate" class="form-select" required></select>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <label class="form-label" for="scheduleCourse">Course</label>
+                    <input id="scheduleCourse" class="form-control readonly-field" readonly>
+                </div>
+                <div>
+                    <label class="form-label" for="scheduleSection">Section</label>
+                    <input id="scheduleSection" class="form-control readonly-field" readonly>
+                </div>
+            </div>
+            <div class="grid-2">
+                <div>
+                    <label class="form-label" for="scheduleType">Interview Type</label>
+                    <select id="scheduleType" class="form-select">
+                        <option>Online (Zoom / Teams)</option>
+                        <option>In-Person (Faculty Office)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label" for="scheduleDate">Date &amp; Time</label>
+                    <input id="scheduleDate" type="datetime-local" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="scheduleNotes">Notes for Applicant</label>
+                <textarea id="scheduleNotes" rows="4" placeholder="Add location details or meeting link..."></textarea>
+            </div>
+            <div class="form-actions">
+                <a class="btn-secondary" href="applicants.html">Cancel</a>
+                <button class="btn-primary" type="submit">Send Invitation</button>
+            </div>
+        </form>
+    </section>
+</div>
+</main>
+<footer><div class="container-wide">© 2026 TA Portal | TA Recruitment &amp; Management Portal. All Rights Reserved.</div></footer>
+<script type="module" src="../assets/js/faculty.js"></script>
+</body>
+</html>
